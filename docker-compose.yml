@@ -1,0 +1,39 @@
+version: '3'
+services:
+  web:
+    container_name: ${PROJECT_NAME}_php
+    build: ./docker/public
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ${LOCAL_PROJECT_ROOT}:/var/www/html
+    links:
+      - db:db
+      - phpmyadmin:phpmyadmin
+
+  db:
+    container_name: ${PROJECT_NAME}_db
+    image: mariadb:latest
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./docker/mariadb:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    container_name: ${PROJECT_NAME}_phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db:db
+    ports:
+      - "8081:8081"
+
+volumes:
+  dbdata:
+    driver: local
