@@ -1,39 +1,57 @@
-version: '3'
+version: "3"
 services:
-  web:
-    container_name: ${PROJECT_NAME}_php
-    build: ./docker/public
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - ${LOCAL_PROJECT_ROOT}:/var/www/html
-    links:
-      - db:db
-      - phpmyadmin:phpmyadmin
-
   db:
+    image: mariadb:10.11
     container_name: ${PROJECT_NAME}_db
-    image: mariadb:latest
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --innodb_file_format=Barracuda --innodb_large_prefix=ON
     volumes:
-      - dbdata:/var/lib/mysql
-      - ./docker/mariadb:/docker-entrypoint-initdb.d
+      - db-data:/var/lib/mysql
+    ports:
+      - "5501:3306"
     environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD='yes'
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-    ports:
-      - "3306:3306"
+    networks:
+      - dev
 
   phpmyadmin:
+    image: phpmyadmin
     container_name: ${PROJECT_NAME}_phpmyadmin
-    image: phpmyadmin/phpmyadmin
-    links:
-      - db:db
+    depends_on:
+      - db
     ports:
-      - "8081:8081"
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+    networks:
+      - dev
+
+  www:
+    build: docker/public
+    container_name: ${PROJECT_NAME}_www
+    ports:
+      - "8741:80"
+    volumes:
+      - ./docker/public/php/vhosts:/etc/apache2/sites-enabled
+      - ./sources:/var/www/html
+    networks:
+      - dev
+    extra_hosts:
+      - host.docker.internal:host-gateway
+      
+  redis:
+    image: redis:7.0.0
+    container_name: ${PROJECT_NAME}_redis
+    ports:
+      - "6379"
+    command: redis-server --maxmemory 1gb --maxmemory-policy volatile-lru --save ""
+
+    
+networks:
+    dev:
 
 volumes:
-  dbdata:
-    driver: local
+    db-data:
