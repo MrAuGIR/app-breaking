@@ -23,7 +23,7 @@ $tableUsers = 'users';
  * @param string $dbPassword Database password.
  * @param string $dbName Database name.
  */
-function connect($dbHost = 'localhost', $dbUser = 'phpuser', $dbPassword = 'phpuser', $dbName = 'videogame_db')
+function connect($dbHost = 'db', $dbUser = 'root', $dbPassword = 'root', $dbName = 'videogame_db')
 {
     global $connection;
 
