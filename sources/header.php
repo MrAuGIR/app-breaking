@@ -73,7 +73,7 @@ if (isset($_SESSION['cart'])) {
                 }
 
                 # Admin detected
-                if ($_SESSION['role'] == 1) {
+                if ($_COOKIE['role'] == "1") {
                     echo "<li><a href='addgame.php'>Add Games</a></li>";
                 }
 

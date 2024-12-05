@@ -16,7 +16,7 @@ $error = 'Default error.';
 
 // Validate string
 if (filter_has_var(INPUT_GET, "m")) {
-    $error = filter_input(INPUT_GET, 'm', FILTER_SANITIZE_STRING);
+    $error = filter_input(INPUT_GET, 'm', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 }
 ?>
 

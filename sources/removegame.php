@@ -10,7 +10,7 @@ $pageTitle = "Game Details";
 require('header.php');
 
 # Deny entry for unauthorized users
-if ($_SESSION['role'] != 1) {
+if ($_COOKIE['role'] != "1") {
     raiseError("Direct Access to this page is forbidden");
 }
 

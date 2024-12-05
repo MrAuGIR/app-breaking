@@ -168,6 +168,7 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `passwo
 (17, 'Tim', 'Mason', 'tmason@gmail.com', 'TIMMAY', '$2y$10$JPGA0/.0yzdYTgn79CmKKOGhMj2a/MsKFKgLhqJWoIikZfiaZy9Fm', 2),
 (18, 'Rachel', 'Calidver', 'rachandroll@gmail.com', 'woahwoahgirliegirl2939402', '$2y$10$vgqVLb/VG4hmkFdRbOerS.sBgcpo75Wng3shdKz0rL5pEAGoiCNB.', 2),
 (19, 'Barack', 'Obama', 'bigballerindahouse@gmail.com', 'bigballa', '$2y$10$XgQfVE/CCsjPSI5PYo5jFuaTrt3qIAgPlGyREdOSz2PkheHYOeg1u', 2);
+(20, 'Dev', 'User', 'devuser@test.fr', 'devuser', '$2y$10$dJ2x4HAH1O8w9sUVFH5Vm.P8.Y1PhoS8IFELh6KW748BrJ1BcDN/q', 2);
 
 --
 -- Indexes for dumped tables

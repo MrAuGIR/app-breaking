@@ -88,7 +88,7 @@ $rows = fetchData($query);
                            value="Back to Games List">
                     <?php
                     // Display buttons only if user is admin
-                    if ($_SESSION['role'] == 1) {
+                    if ($_COOKIE['role'] == "1") {
 
                         ?>
                         <input type="button"

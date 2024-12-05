@@ -64,7 +64,7 @@ function getValidation($input_type, $var_name, $filter = null)
         case null:
             $output = filter_input($input_type, $var_name);
             break;
-        case FILTER_SANITIZE_STRING:
+        case FILTER_SANITIZE_FULL_SPECIAL_CHARS:
         case FILTER_SANITIZE_NUMBER_INT:
             $output = filter_input($input_type, $var_name, $filter);
             break;

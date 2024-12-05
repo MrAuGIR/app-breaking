@@ -61,6 +61,8 @@ if ($query->num_rows) {
         $_SESSION['login_status'] = 1;
     }
 
+    
+
 }
 
 # disconnect from db
