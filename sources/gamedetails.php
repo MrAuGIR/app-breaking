@@ -14,7 +14,7 @@ require('header.php');
 connect();
 
 // Retrieve and validate game id
-$id = getValidation(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+$id = $_GET['id'];
 
 // Execute query with statement
 /** @var $tableGames */

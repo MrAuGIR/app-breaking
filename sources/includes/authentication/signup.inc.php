@@ -19,12 +19,11 @@ connect();
 global $connection;
 checkSession();
 
-# Securely set attributes from POST
-$firstname = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$lastname = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$email = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL)));
-$username = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'username', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$password = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$email = $_POST['email'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 $role = 2;  //regular user
 
 # Before inserting, check if user already exists in the database

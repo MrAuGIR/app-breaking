@@ -21,34 +21,22 @@ require_once('../database.inc.php');
 connect();
 global $connection;
 
-// Securely grab the information
-$title = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$genre = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'genre', FILTER_DEFAULT)));
-$developer = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'developer', FILTER_DEFAULT)));
-$publisher = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'publisher', FILTER_DEFAULT)));
-$rating = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'rating', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$esrb = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'esrb', FILTER_DEFAULT)));
-$image = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$release_date = $connection->real_escape_string(filter_input(INPUT_POST, 'release_date', FILTER_DEFAULT));
-$price = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$description = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-
 //Define MySQL Update statement
 /** @var $tableGames */
 $query = runQuery
 ("UPDATE $tableGames
               SET 
-                  title='$title', 
-                  genre='$genre', 
-                  developer='$developer',
-                  publisher='$publisher', 
-                  rating='$rating', 
-                  esrb='$esrb', 
-                  image='$image', 
-                  release_date='$release_date', 
-                  price='$price',
-                  description='$description'
-              WHERE id=$id"
+                  title='".$_POST['title']."', 
+                  genre='".$_POST['genre']."', 
+                  developer='".$_POST['developer']."', 
+                  publisher='".$_POST['publisher']."', 
+                  rating='".$_POST['rating']."', 
+                  esrb='".$_POST['esrb']."', 
+                  image='".$_POST['image']."', 
+                  release_date='".$_POST['release_date']."', 
+                  price='".$_POST['price']."', 
+                  description='".$_POST['description']."',
+              WHERE id=".$_POST['id']
 );
 
 // Disconnect from Database and return

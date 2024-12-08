@@ -12,21 +12,6 @@ if (!$_POST) {
     raiseError("Direct access to this script is not allowed.");
 }
 
-// Check each POST variable and kill the script if any of them aren't detected.
-if (!filter_has_var(INPUT_POST, 'title') ||
-    !filter_has_var(INPUT_POST, 'genre') ||
-    !filter_has_var(INPUT_POST, 'developer') ||
-    !filter_has_var(INPUT_POST, 'publisher') ||
-    !filter_has_var(INPUT_POST, 'rating') ||
-    !filter_has_var(INPUT_POST, 'esrb') ||
-    !filter_has_var(INPUT_POST, 'image') ||
-    !filter_has_var(INPUT_POST, 'release_date') ||
-    !filter_has_var(INPUT_POST, 'price') ||
-    !filter_has_var(INPUT_POST, 'description')) {
-
-    raiseError("There was an error retrieving game details. Game cannot be added.");
-}
-
 // Init database
 require_once('../database.inc.php');
 
@@ -39,17 +24,6 @@ connect();
  */
 global $connection;
 
-$title = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$genre = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'genre', FILTER_DEFAULT)));
-$developer = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'developer', FILTER_DEFAULT)));
-$publisher = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'publisher', FILTER_DEFAULT)));
-$rating = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'rating', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$esrb = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'esrb', FILTER_DEFAULT)));
-$image = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$release_date = $connection->real_escape_string(filter_input(INPUT_POST, 'release_date', FILTER_DEFAULT));
-$price = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-$description = $connection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_FULL_SPECIAL_CHARS)));
-
 // Declare MySQL insert statement
 /** @var $tableGames */
 $query = runQuery
@@ -57,16 +31,16 @@ $query = runQuery
               VALUES 
                   (
                   NULL, 
-                  '$title', 
-                  '$genre', 
-                  '$developer',
-                  '$publisher', 
-                  '$rating', 
-                  '$esrb', 
-                  '$image', 
-                  '$release_date', 
-                  '$price',
-                  '$description'
+                  '".$_POST['title']."', 
+                  '".$_POST['genre']."',
+                  '".$_POST['developer']."',
+                  '".$_POST['publisher']."',
+                  '".$_POST['rating']."',
+                  '".$_POST['esrb']."',
+                  '".$_POST['image']."',
+                  '".$_POST['release_date']."', 
+                  '".$_POST['price']."',
+                  '".$_POST['description']."'
                   )"
 );
 

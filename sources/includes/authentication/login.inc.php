@@ -29,9 +29,9 @@ $username = $password = "";
 
 # retrieve username and password
 if (isset($_POST['username'])) {
-    $username = $connection->real_escape_string(trim($_POST['username']));
+    $username = $_POST['username'];
     if (isset($_POST['password'])) {
-        $password = $connection->real_escape_string(trim($_POST['password']));
+        $password = $_POST['password'];
     } else {
         raiseError("There was an issue identifying your password");
     }
