@@ -20,8 +20,13 @@ $id = $_GET['id'];
 /** @var $tableGames */
 $query = runQuery("SELECT * FROM $tableGames WHERE id=$id");
 
+/** @var $commentTable */
+$queryComment = runQuery("SELECT * FROM $commentTable WHERE id_game=$id");
+
 // Get data associated with query
 $rows = fetchData($query);
+
+$comments = fetchData($queryComment);
 ?>
 
     <section>
@@ -105,6 +110,29 @@ $rows = fetchData($query);
             </tr>
         </table>
         <div style="color: red; display: inline-block;"><?= $confirm ?></div>
+    </section>
+    <section class="game-details-container">
+        <form class="form-comment" method="POST" action="includes/comment/addComment.inc.php">
+            <input type="text" name="username" id="username" value="<?= $_SESSION['name'] ?>" hidden>
+            <input type="text" name="id_game" id="id_game" value="<?= $id ?>" hidden>
+            <label for="commentText">Commentaire</label>
+            <textarea id="commentText" type="text" name="comment"></textarea>
+            <button type="submite">Soumettre votre commentaire</button>
+        </form>
+    </section>
+    <section class="game-details-container">
+        <?php foreach($comments as $comment) : ?>
+            <div class="comment">
+                <h4><?= $comment['username'] ?></h4>
+                <p><?= $comment['comment'] ?></p>
+                <div class="action">
+                    <input type="button"
+                           onclick="window.location.href='includes/comment/deleteComment.inc.php?id=<?= $comment['id'] ?>&game=<?= $id ?>' ;"
+                           value="delete comment"/>
+                </div>
+            </div>
+
+        <?php endforeach; ?>
     </section>
 <?php
 

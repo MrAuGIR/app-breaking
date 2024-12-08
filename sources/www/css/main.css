@@ -553,3 +553,40 @@ This made the button appear at the bottom right of the entire page separate of t
     color: #fff;
     text-decoration: none;
 }
+
+.form-comment {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    min-height: 250px;
+}
+
+.form-comment > textarea {
+    min-height: 200px;
+    margin-bottom: 10px;
+}
+
+.form-comment > button {
+    width: 200px;
+    border-radius: 25px;
+    height: calc(1.5rem + 4px);
+}
+
+.comment h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.comment p {
+    margin: 2px 2px;
+    padding: 2px 2px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: lightgrey;
+    color: #0a0a0a;
+    min-height: 100px;
+    text-align: left;
+}
