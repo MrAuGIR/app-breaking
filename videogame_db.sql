@@ -170,6 +170,21 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `passwo
 (19, 'Barack', 'Obama', 'bigballerindahouse@gmail.com', 'bigballa', '$2y$10$XgQfVE/CCsjPSI5PYo5jFuaTrt3qIAgPlGyREdOSz2PkheHYOeg1u', 2);
 (20, 'Dev', 'User', 'devuser@test.fr', 'devuser', '$2y$10$dJ2x4HAH1O8w9sUVFH5Vm.P8.Y1PhoS8IFELh6KW748BrJ1BcDN/q', 2);
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `comment` varchar(255) DEFAULT NULL,
+  `username` varchar(155) DEFAULT NULL,
+  `id_game` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
 --
 -- Indexes for dumped tables
 --
@@ -229,6 +244,23 @@ ALTER TABLE `games`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+COMMIT;
+
+    --
+-- Index pour la table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -55,6 +55,7 @@ if ($query->num_rows) {
     if (password_verify($password, $row['password'])) {
 
         # Login Successfully
+        $_SESSION['id'] = $row['id'];
         $_SESSION['login'] = $username;
         $_SESSION['role'] = $row['role'];
         $_SESSION['name'] = $row['firstname'] . " " . $row['lastname'];

@@ -35,7 +35,7 @@ $query = runQuery
                   image='".$_POST['image']."', 
                   release_date='".$_POST['release_date']."', 
                   price='".$_POST['price']."', 
-                  description='".$_POST['description']."',
+                  description='".$_POST['description']."'
               WHERE id=".$_POST['id']
 );
 
