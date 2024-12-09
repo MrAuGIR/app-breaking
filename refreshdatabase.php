@@ -12,6 +12,12 @@ global $connection;
 $sql = file_get_contents(__DIR__."/videogame_db.sql");
 $query = runQuery($sql);
 
+$pageTitle = "Add game";
+require_once 'header.php';
 ?>
 
 <div>Database refreshed</div>
+
+
+<?php
+require_once 'footer.php';
