@@ -15,6 +15,7 @@ $tableGenres = 'genres';
 $tablePublishers = 'publishers';
 $tableDevelopers = 'developers';
 $tableUsers = 'users';
+$commentTable = 'comments';
 
 /**
  * Connect to the database.
