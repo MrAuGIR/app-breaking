@@ -93,7 +93,7 @@ $comments = fetchData($queryComment);
                            value="Back to Games List">
                     <?php
                     // Display buttons only if user is admin
-                    if ($_COOKIE['role'] == "1") {
+                    if ($_COOKIE['role'] == "admin") {
 
                         ?>
                         <input type="button"

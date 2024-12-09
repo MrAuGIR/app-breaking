@@ -6,7 +6,7 @@ $pageTitle = "Confirm Game Deletion";
 require_once('header.php');
 
 # Deny entry for unauthorized users
-if ($_COOKIE['role'] != "1") {
+if ($_COOKIE['role'] != "admin") {
     raiseError("Direct Access to this page is forbidden");
 }
 
