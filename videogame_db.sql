@@ -161,13 +161,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `role`) VALUES
-(9, 'Jalen', 'Vaughn', 'javaugh@iu.edu', 'javaugh', '$2y$10$c/pNg9C3nbP0gs7HH1ohuuIM2u5SpU9tltCGwi4c7m8aWSAnkcWEK', 1),
-(10, 'Ayah', 'Hineiti', 'ahine@iu.edu', 'ahine', '$2y$10$9D5jB4Uv9RXkwFDp5s9VM.yeUX3AvTQsMAWec5Jr4fEKjA8v9WZJO', 1),
-(11, 'Phillip', 'Eilers', 'phillipe@iu.edu', 'phillipe', '$2y$10$PnktHyrs45ndJfiuZrpXQeQUsi09aVb5i.MM2R2e248iuZSS7Xqk6', 1),
-(12, 'Tom', 'Matrick', 'tmatrick@gmail.com', 'tmatrick', '$2y$10$6NbyBBo33FglHUEIcbSf6Oge/gWt4KQhxJ5u5FxDyRIR6Fd8cmEoC', 2),
-(17, 'Tim', 'Mason', 'tmason@gmail.com', 'TIMMAY', '$2y$10$JPGA0/.0yzdYTgn79CmKKOGhMj2a/MsKFKgLhqJWoIikZfiaZy9Fm', 2),
-(18, 'Rachel', 'Calidver', 'rachandroll@gmail.com', 'woahwoahgirliegirl2939402', '$2y$10$vgqVLb/VG4hmkFdRbOerS.sBgcpo75Wng3shdKz0rL5pEAGoiCNB.', 2),
-(19, 'Barack', 'Obama', 'bigballerindahouse@gmail.com', 'bigballa', '$2y$10$XgQfVE/CCsjPSI5PYo5jFuaTrt3qIAgPlGyREdOSz2PkheHYOeg1u', 2),
 (20, 'Dev', 'User', 'devuser@test.fr', 'devuser', '$2y$10$dJ2x4HAH1O8w9sUVFH5Vm.P8.Y1PhoS8IFELh6KW748BrJ1BcDN/q', 2);
 
 -- --------------------------------------------------------
