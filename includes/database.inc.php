@@ -17,6 +17,9 @@ $tableDevelopers = 'developers';
 $tableUsers = 'users';
 $commentTable = 'comments';
 
+ini_set('display_errors', TRUE);
+error_reporting(E_ALL);
+
 require_once("./env.php");
 
 /**
