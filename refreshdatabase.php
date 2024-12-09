@@ -1,6 +1,6 @@
 <?php
 
-require_once("./includes/functions.inc.php");
+// require_once("./includes/functions.inc.php");
 
 # declare required db
 require_once("./includes/database.inc.php");
