@@ -17,6 +17,8 @@ $tableDevelopers = 'developers';
 $tableUsers = 'users';
 $commentTable = 'comments';
 
+require_once("./env.php");
+
 /**
  * Connect to the database.
  * @param string $dbHost Database host.
@@ -24,11 +26,21 @@ $commentTable = 'comments';
  * @param string $dbPassword Database password.
  * @param string $dbName Database name.
  */
-function connect($dbHost = 'db', $dbUser = 'root', $dbPassword = 'root', $dbName = 'videogame_db')
+function connect(
+    $dbHost = null,
+    $dbUser = null,
+    $dbPassword = null,
+    $dbName = null
+    )
 {
     global $connection;
 
-    $connection = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
+    $connection = new mysqli(
+        $dbHost ?? $_ENV["MYSQL_HOST"],
+        $dbUser ?? $_ENV["MYSQL_USER"], 
+        $dbPassword ?? $_ENV["MYSQL_PASSWORD"],
+        $dbName ?? $_ENV["MYSQL_DATABASE"]
+    );
 
     // Check for connection errors
     if ($connection->connect_error) {
