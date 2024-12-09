@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `videogame_db`
 --
-CREATE DATABASE IF NOT EXISTS `videogame_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `videogame_db`;
+-- CREATE DATABASE IF NOT EXISTS `videogame_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+-- USE `videogame_db`;
 
 -- --------------------------------------------------------
 
@@ -167,7 +167,7 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `passwo
 (12, 'Tom', 'Matrick', 'tmatrick@gmail.com', 'tmatrick', '$2y$10$6NbyBBo33FglHUEIcbSf6Oge/gWt4KQhxJ5u5FxDyRIR6Fd8cmEoC', 2),
 (17, 'Tim', 'Mason', 'tmason@gmail.com', 'TIMMAY', '$2y$10$JPGA0/.0yzdYTgn79CmKKOGhMj2a/MsKFKgLhqJWoIikZfiaZy9Fm', 2),
 (18, 'Rachel', 'Calidver', 'rachandroll@gmail.com', 'woahwoahgirliegirl2939402', '$2y$10$vgqVLb/VG4hmkFdRbOerS.sBgcpo75Wng3shdKz0rL5pEAGoiCNB.', 2),
-(19, 'Barack', 'Obama', 'bigballerindahouse@gmail.com', 'bigballa', '$2y$10$XgQfVE/CCsjPSI5PYo5jFuaTrt3qIAgPlGyREdOSz2PkheHYOeg1u', 2);
+(19, 'Barack', 'Obama', 'bigballerindahouse@gmail.com', 'bigballa', '$2y$10$XgQfVE/CCsjPSI5PYo5jFuaTrt3qIAgPlGyREdOSz2PkheHYOeg1u', 2),
 (20, 'Dev', 'User', 'devuser@test.fr', 'devuser', '$2y$10$dJ2x4HAH1O8w9sUVFH5Vm.P8.Y1PhoS8IFELh6KW748BrJ1BcDN/q', 2);
 
 -- --------------------------------------------------------

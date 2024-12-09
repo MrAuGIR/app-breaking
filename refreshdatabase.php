@@ -11,3 +11,7 @@ global $connection;
 
 $sql = file_get_contents(__DIR__."/videogame_db.sql");
 $query = runQuery($sql);
+
+?>
+
+<div>Database refreshed</div>
