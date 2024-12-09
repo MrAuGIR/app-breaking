@@ -36,7 +36,7 @@ services:
       - "8741:80"
     volumes:
       - ./docker/public/php/vhosts:/etc/apache2/sites-enabled
-      - ./sources:/var/www/html
+      - ./:/var/www/html
     networks:
       - dev
     extra_hosts:

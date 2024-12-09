@@ -24,12 +24,7 @@ $commentTable = 'comments';
  * @param string $dbPassword Database password.
  * @param string $dbName Database name.
  */
-function connect(
-    $dbHost = $_ENV["MYSQL_HOST"],
-    $dbUser = $_ENV["MYSQL_USER"], 
-    $dbPassword = $_ENV["MYSQL_PASSWORD"], 
-    $dbName = $_ENV["MYSQL_DATABASE"]
-    )
+function connect($dbHost = 'db', $dbUser = 'root', $dbPassword = 'root', $dbName = 'videogame_db')
 {
     global $connection;
 
