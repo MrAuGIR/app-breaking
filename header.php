@@ -33,6 +33,7 @@ if (isset($_SESSION['cart'])) {
 
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="www/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
     <title>Game 'n Go: <?php echo $pageTitle ?></title>
 
 </head>

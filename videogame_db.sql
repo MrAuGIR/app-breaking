@@ -161,7 +161,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `role`) VALUES
-(20, 'Dev', 'User', 'devuser@test.fr', 'devuser', '$2y$10$dJ2x4HAH1O8w9sUVFH5Vm.P8.Y1PhoS8IFELh6KW748BrJ1BcDN/q', user);
+(20, 'Dev', 'User', 'devuser@test.fr', 'devuser', '$2y$10$dJ2x4HAH1O8w9sUVFH5Vm.P8.Y1PhoS8IFELh6KW748BrJ1BcDN/q', 'user');
 
 -- --------------------------------------------------------
 
@@ -237,7 +237,6 @@ ALTER TABLE `games`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-COMMIT;
 
     --
 -- Index pour la table `comments`

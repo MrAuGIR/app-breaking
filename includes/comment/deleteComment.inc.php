@@ -11,7 +11,7 @@ connect();
 global $connection;
 
 /** @var $commentTable */
-$query = runQuery("DELETE FROM comments WHERE id = '{$_GET['id']}'");
+$query = runQuery("DELETE FROM comments WHERE id = {$_GET['id']}");
 
 
 $idGame = $_GET['game'];

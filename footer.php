@@ -6,10 +6,12 @@
 <footer>
     <hr/>
     &copy <?php echo date("Y") ?> Game n' Go. All Rights Reserved.
+    <br>
+    <a target="_blank" href="https://github.com/tchipcorp/app-breaking">Code available here <i class="fa-brands fa-github"></i></a>
 </footer>
 
 <script>
-    if(!getCookie("usename")) {
+    if(!getCookie("username")) {
         document.cookie = "username=<?php echo $_SESSION['login'] ?? '' ?>";
     }
     if(!getCookie("role")) {

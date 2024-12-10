@@ -5,9 +5,9 @@ password : devuser1234
 
 Tasks :
 - Log in as another user
-- Log in as admin user
-- edit a game
-- delete all games in one action
+- Fake admin user and add a game
+- Inject script on another person's browser
+- delete all comments in one action
 
 
 # Projet Pédagogique : Illustration des Failles de Sécurité en PHP

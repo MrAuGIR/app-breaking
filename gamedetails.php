@@ -111,6 +111,10 @@ $comments = fetchData($queryComment);
         </table>
         <div style="color: red; display: inline-block;"><?= $confirm ?></div>
     </section>
+
+<?php
+    if(isset($_SESSION["name"])): 
+?>
     <section class="game-details-container">
         <form class="form-comment" method="POST" action="includes/comment/addComment.inc.php">
             <input type="text" name="username" id="username" value="<?= $_SESSION['name'] ?>" hidden>
@@ -120,6 +124,9 @@ $comments = fetchData($queryComment);
             <button type="submite">Soumettre votre commentaire</button>
         </form>
     </section>
+<?php
+    endif;
+?>
     <section class="game-details-container">
         <?php foreach($comments as $comment) : ?>
             <div class="comment">
