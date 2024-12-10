@@ -44,11 +44,12 @@ if (isset($_SESSION['cart'])) {
 <!-- Nav Bar Starts -->
 <nav>
 
+
     <!-- Logo -->
 
     <div class="header">
         <div class="logo">
-            <a href="index.php"><img src="www/img/logo.png" alt="Logo"></a>
+            <a href="index.php"><img src="www/img/logo.jpg" alt="Logo"></a>
         </div>
 
         <div class="nav">
