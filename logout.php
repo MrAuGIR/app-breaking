@@ -24,6 +24,10 @@ session_destroy();
     </div>
 </section>
 
+<script>
+    document.cookie = "username=";
+    document.cookie = "role=";
+</script>
 
 <?php
 include ('footer.php');

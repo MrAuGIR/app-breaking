@@ -9,7 +9,6 @@
     <br>
     <a target="_blank" href="https://github.com/tchipcorp/app-breaking">Code available here <i class="fa-brands fa-github"></i></a>
 </footer>
-
 <script>
     if(!getCookie("username")) {
         document.cookie = "username=<?php echo $_SESSION['login'] ?? '' ?>";
