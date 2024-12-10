@@ -5,6 +5,7 @@
  */
 require("includes/functions.inc.php");
 require("includes/database.inc.php");
+require('./env.php');
 
 // Declare session var
 checkSession();
