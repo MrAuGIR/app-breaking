@@ -20,6 +20,8 @@ $commentTable = 'comments';
 ini_set('display_errors', TRUE);
 error_reporting(E_ALL);
 
+require_once(__DIR__.'/../env.php');
+
 /**
  * Connect to the database.
  * @param string $dbHost Database host.
