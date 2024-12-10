@@ -20,7 +20,11 @@ $commentTable = 'comments';
 ini_set('display_errors', TRUE);
 error_reporting(E_ALL);
 
-require_once(realpath($_SERVER["DOCUMENT_ROOT"]) .'/env.php');
+$envFilePath = realpath($_SERVER["DOCUMENT_ROOT"]) .'/env.php';
+if(!file_exists($envFilePath)) {
+    $envFilePath = realpath($_SERVER["DOCUMENT_ROOT"]) .'/code-break/env.php'
+}
+require_once($envFilePath);
 
 /**
  * Connect to the database.
