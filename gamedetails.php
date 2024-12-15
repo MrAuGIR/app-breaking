@@ -27,9 +27,20 @@ $queryComment = runQuery("SELECT * FROM $commentTable WHERE id_game=$id");
 $rows = fetchData($query);
 
 $comments = fetchData($queryComment);
+
+// get Alert
+$message = '';
+if (!empty($_GET['alerte'])) {
+
+    $message .= '<div class="alerte alerte-sql">';
+    $message .= '<span class="message message-sql" aria-hidden="true"> sql injection ! </span></div>';
+}
 ?>
 
     <section>
+        <?php if (!empty($message)): ?>
+            <?= $message; ?>
+        <?php endif; ?>
         <div class="game-details-container">
         <h2>Game Details</h2>
         <table>

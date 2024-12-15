@@ -590,3 +590,22 @@ This made the button appear at the bottom right of the entire page separate of t
     min-height: 100px;
     text-align: left;
 }
+
+.alerte {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 4rem;
+    background-color: white;
+    color: #0a0a0a;
+    font-weight: 600;
+    font-size: 12pt;
+    justify-content: center;
+    align-content: center;
+    padding: 2rem 2rem;
+}
+
+.alerte-sql {
+    background-color: aqua;
+    color: red;
+}
